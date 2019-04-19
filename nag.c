@@ -18,7 +18,7 @@ int main()
                       { 9, 0, 2 }, // P2 
                       { 2, 2, 2 }, // P3 
                       { 4, 3, 3 } }; // P4 
-// Available Resources  
+// Available resources  
     avail[3] = { 3, 3, 2 };  
   
     int f[n], ans[n], ind = 0; 
