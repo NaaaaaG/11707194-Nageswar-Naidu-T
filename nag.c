@@ -63,6 +63,6 @@ int main()
   //Step 4:processes safe state sequence
     printf("This is the Safe Sequence of the given Processes:-\n"); 
     for (i = 0; i < n - 1; i++) 
-        printf(" P%d ->", ans[i]); 
-    printf(" P%d", ans[n - 1]); 
+        printf(" P%d ->\n", ans[i]); 
+    printf(" P%d\n", ans[n - 1]); 
 } 
