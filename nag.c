@@ -1,14 +1,10 @@
-
-// Banker's Algorithm 
 #include <stdio.h> 
 int main() 
 { 
-    // P0, P1, P2, P3, P4 are the Process names here 
-  
     int n, m, i, j, k; 
     n = 5; // Number of processes 
     m = 3; // Number of resources 
-    int alloc[5][3] = { { 0, 1, 0 }, // P0    // Allocation Matrix 
+    int a[5][3] = {     { 0, 1, 0 }, // P0    // Allocation Matrix 
                         { 2, 0, 0 }, // P1 
                         { 3, 0, 2 }, // P2 
                         { 2, 1, 1 }, // P3 
@@ -29,7 +25,7 @@ int main()
     int need[n][m]; 
     for (i = 0; i < n; i++) { 
         for (j = 0; j < m; j++) 
-            need[i][j] = max[i][j] - alloc[i][j]; 
+            need[i][j] = max[i][j] - a[i][j]; 
     } 
     int y = 0; 
     for (k = 0; k < 5; k++) { 
@@ -46,19 +42,15 @@ int main()
                 if (flag == 0) { 
                     ans[ind++] = i; 
                     for (y = 0; y < m; y++) 
-                        avail[y] += alloc[i][y]; 
+                        avail[y] += a[i][y]; 
                     f[i] = 1; 
                 } 
             } 
         } 
     } 
   
-    printf("Following is the SAFE Sequence\n"); 
+    printf("This is the Safe Sequence of the given Processes:-\n"); 
     for (i = 0; i < n - 1; i++) 
         printf(" P%d ->", ans[i]); 
     printf(" P%d", ans[n - 1]); 
-  
-    return (0); 
-  
-    // This code is contributed by Deep Baldha (CandyZack) 
 } 
